@@ -14,7 +14,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Adicionar Feedback
-      run: echo "Feedback: ${{ github.event_name }}" >> feedback.txt
+      
+      run:echo "Feedback: ${{ github.event_name }}" >> feedback.txt
 
     - name: Commit e Push das Alterações
       run: |
