@@ -1,26 +1,30 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000000;
     margin: 0;
     padding: 0;
   }
   
   .container {
+    font-size: 22px;
+    color: aliceblue;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
   }
   
   .btn {
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
+    
+    padding: 20px 20px;
+    margin: 20px;
+    font-size: 22px;
     cursor: pointer;
     border: none;
-    border-radius: 15px;
-    background-color: #ff1900a9;
+    border-radius: 20px;
+    background-color: #eeff00de;
     color: #000000;
   }
   
   .btn:hover {
-    background-color: #21b300;
+    background-color: #32e641;
   }
   
