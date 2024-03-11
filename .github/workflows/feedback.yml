@@ -15,7 +15,6 @@ jobs:
 
     - name: Adicionar Feedback
       run: echo "Feedback: ${{ github.event_name }}" >> feedback.txt
-      shell: bash
 
     - name: Commit e Push das Alterações
       run: |
