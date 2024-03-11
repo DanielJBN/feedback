@@ -13,14 +13,14 @@ jobs:
     - name: Checkout do Código
       uses: actions/checkout@v2
 
-    - name: Enviar Feedback
+    - name: Adicionar Feedback
+      run: echo "Feedback: ${{ github.event_name }}" >> feedback.txt
+      shell: bash
+
+    - name: Commit e Push das Alterações
       run: |
-        echo "Feedback: ${{ github.event_name }}" >> feedback.txt
-        echo "Data: $(date)" >> feedback.txt
-        echo "Feedback enviado: ${{ github.event_name }}"
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add feedback.txt
         git commit -m "Adicionando feedback"
         git push
-
