@@ -1,18 +1,23 @@
-document.getElementById("satisfeito").addEventListener("click", function() {
-    enviarFeedback("Satisfeito");
-  });
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware para permitir o parsing de JSON
+app.use(bodyParser.json());
+
+// Rota para receber os feedbacks
+app.post('/receber-feedback', (req, res) => {
+  const feedback = req.body.feedback;
+  console.log('Feedback recebido:', feedback);
   
-  document.getElementById("razoavelmenteSatisfeito").addEventListener("click", function() {
-    enviarFeedback("Razoavelmente Satisfeito");
-  });
+  // Aqui você pode fazer o que quiser com o feedback, como salvar em um banco de dados, por exemplo
   
-  document.getElementById("insatisfeito").addEventListener("click", function() {
-    enviarFeedback("Insatisfeito");
-  });
-  
-  function enviarFeedback(feedback) {
-    // Aqui você pode enviar o feedback para onde for necessário, como um servidor backend, API, etc.
-    console.log("Feedback enviado:", feedback);
-    alert("Obrigado pelo seu feedback!");
-  }
-  
+  res.sendStatus(200); // Respondendo com sucesso
+});
+
+// Iniciar o servidor
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
